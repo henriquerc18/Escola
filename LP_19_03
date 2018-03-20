@@ -1,0 +1,10 @@
+LP - 19/03/2018
+
+ArrayList<String> listaAlunos = new ArrayList<String>();
+listaAlunos.add("André Castro");
+
+ArrayList<int> listaNotas = new ArrayList<int>();
+listaNotas.add(7);
+
+Necessita de "import" específico;
+import java.util.ArrayList;
