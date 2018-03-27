@@ -1,6 +1,7 @@
 package escola;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Escola {
     public static void main (String args[]) {        
         /*Pessoa pes = new Pessoa(args[0], args[1]);
@@ -11,8 +12,8 @@ public class Escola {
 
         Professor prof = new Professor(args[0], args[1], args[3], Integer.parseInt(args[4]));
         prof.mostraDados();*/
-    alunoNota();
-    }
+    /*alunoNota();
+    }*/
     /*public void listaAlunos(){
         ArrayList<String> listaAlunos = new ArrayList<String>();
         Aluno aluno = new Aluno("Henrique", "henriquerc2015@gmail.com", 13100192);
@@ -27,7 +28,7 @@ public class Escola {
         System.out.println("Nota");
         System.out.println(Arrays.toint(listaNotas.toArray()));
     }*/
-    public static void alunoNota(){
+    /*public static void alunoNota(){
         ArrayList<String> listaAlunos = new ArrayList<String>();
         ArrayList<Integer> listaNotas = new ArrayList<Integer>();
 
@@ -98,5 +99,24 @@ public class Escola {
             }else  
                 System.out.println("Foi reprovado");
         } 
-    }        
+    }*/
+    	Console cons = System.console();
+    	if(cons == null) {
+    		System.out.println("Console inacessível");
+    		System.exit(1);
+    	}
+    	
+    	String valor = cons.readline("Informe um valor: ");
+    	System.out.println("Você informou: " +valor);
 }
+    	/*Scanner scan = new Scanner(System.in);
+    	System.out.println("Informe um valor String");
+    	String valor = scan.next();
+    	System.out.println("Você informou:" +valor);
+    	System.out.println("Informe a sua idade");
+    	int idade = scan.nextInt();
+    	System.out.println("Idade: " +idade);
+    	System.out.println("Informe seu nome completo: ");
+    	String nomeCompleto = scan.nextLine();
+    	System.out.println("Nome completo: " +nomeCompleto);*/
+
