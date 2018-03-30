@@ -15,7 +15,15 @@ public class Aluno extends Pessoa {
         super(nome, email);
         this.matricula = matricula;
     }
-
+    
+    public Aluno() {
+    	super(nome, email);
+    	System.out.println("Matrícula: ");
+    	Long matricula = Escola.scan.nextLong();
+    	System.out.println("Você informou:" + matricula);
+    	this.matricula = matricula;
+    }
+    
     public void mostraDados(){
         super.mostraDados();
         System.out.println("Matrícula: " + this.matricula);

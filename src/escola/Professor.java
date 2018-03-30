@@ -25,6 +25,18 @@ public class Professor extends Pessoa {
         this.disciplina = disciplina;
         this.cargaHoraria = cargaHoraria;
     }
+    
+    public Professor(){
+    	super(nome, email);
+    	System.out.println("Disciplina: ");
+    	String disciplina = Escola.scan.next();
+    	System.out.println("Você informou:" + disciplina);
+    	System.out.println("Matrícula: ");
+    	int cargaHoraria = Escola.scan.nextInt();
+    	System.out.println("Você informou:" + cargaHoraria);
+    	this.disciplina = disciplina;
+    	this.cargaHoraria = cargaHoraria;
+    }
 
     public void mostraDados(){
         super.mostraDados();
