@@ -17,15 +17,14 @@ public class Aluno extends Pessoa {
     }
     
     public Aluno() {
-    	super(nome, email);
-    	System.out.println("MatrÃ­cula: ");
-    	Long matricula = Escola.scan.nextLong();
-    	System.out.println("VocÃª informou:" + matricula);
-    	this.matricula = matricula;
+    	super();
+    	System.out.println("Matrícula: ");
+    	this.matricula = (int)Escola.nextInt();
+    	Escola.scan.nextLine();
     }
     
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("MatrÃ­cula: " + this.matricula);
+        System.out.println("Matrícula: " + this.matricula);
     }
 }

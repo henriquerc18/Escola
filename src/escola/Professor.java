@@ -8,7 +8,7 @@ public class Professor extends Pessoa {
         return disciplina;
     } 
               
-    public void setDiscipĺina(String disciplina){
+    public void setDisciplina(String disciplina){
         this.disciplina = disciplina;
     }
      
@@ -27,13 +27,11 @@ public class Professor extends Pessoa {
     }
     
     public Professor(){
-    	super(nome, email);
+    	super();
     	System.out.println("Disciplina: ");
-    	String disciplina = Escola.scan.next();
-    	System.out.println("Você informou:" + disciplina);
-    	System.out.println("Matrícula: ");
-    	int cargaHoraria = Escola.scan.nextInt();
-    	System.out.println("Você informou:" + cargaHoraria);
+    	String disciplina = scan.nextLine();
+    	System.out.println("Carga Hor�ria: ");
+    	int cargaHoraria = scan.nextInt();
     	this.disciplina = disciplina;
     	this.cargaHoraria = cargaHoraria;
     }
@@ -41,7 +39,7 @@ public class Professor extends Pessoa {
     public void mostraDados(){
         super.mostraDados();
         System.out.println("Disciplina: " + this.disciplina);
-        System.out.println("Carga Horária: " + this.cargaHoraria); 
+        System.out.println("Carga Hor�ria: " + this.cargaHoraria); 
     }
 }    
         
