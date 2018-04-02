@@ -3,42 +3,55 @@ package escola;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Escola {
-	public static void ArrayList<Aluno> listaAlunos = new ArrayList<Aluno>();
-	public static void ArrayList<Professor> listaProfessores = new ArrayList<Professor>();
+	public static ArrayList<Aluno> listaAlunos = new ArrayList<Aluno>();
+	public static ArrayList<Professor> listaProfessores = new ArrayList<Professor>();
 	public static Scanner scan = new Scanner(System.in);
     public static void main (String args[]){
     	int opcao = menu();
-    	switch(opcao){
-    	
-    	case 1:
-    		System.out.println("1∫ Menu");
-    		Aluno al = new Aluno();
-    		listaAlunos.add(al);
-    		break;
-    	
-    	case 2:
-    		System.out.println("2∫ Menu");
-    		Professor pr = new Professor();
-    		listaProf.add(pr);
-    		break;
-
-    	default:
-    		System.out.println("OpÁ„o invalida");
-    		System.exit(0);
-    		break;
-    		
+    	while(opcao != 99){
+    		switch(opcao){
+	    		case 1:
+	    			System.out.println("--------------------------");
+	    			System.out.println("Menu do Aluno");
+	    			cadAluno();
+	    			listaAlunos.add(aluno);
+	    			break;
+	    		case 2:
+		    		System.out.println("--------------------------");
+		    		System.out.println("Menu do Professor");
+		    		cadProf();
+		    		listaProf.add(professor);
+		    		break;
+		    	default:
+		    		System.out.println("--------------------------");
+		    		System.out.println("Op√ß√£o inv√°lida");
+		    		System.exit(0);
+		    		break;
+	    	}
     	}
-    		System.out.println("========================");
-    		System.out.println("MENU");
-    		System.out.println("Digite:");
-    		public static int menu(){
-    			System.out.println("1: Cadastro de alunos");
-    			System.out.println("2: Cadastro de professores");
-    			System.out.println("OpÁ„o: ");
-    			System.out.println("99: Sair");
-    		}
+    	
+    	public static void cadAluno{
+    		Aluno aluno = new Aluno();
+    		System.out.println("√äxito na cria√ß√£o do aluno");
+    		aluno.mostraDados();
+    	}
+    	
+    	public static void cadProfessor{
+    		Professor professor = new Professor();
+    		System.out.println("√äxito na cria√ß√£o do professor");
+    		professor.mostraDados();
+    	}
+    	
+    	int opcao = menu();
+    	public static int menu(){
+    		System.out.println("--------------------------");
+			System.out.println("1 - Cadastro de alunos");
+			System.out.println("2 - Cadastro de professores");
+			System.out.println("99 - Sair");
+			System.out.println("Op√ß√£o: ");
+		}
     }
-}
+}    	
     	//Scanner scan = new Scanner(System.in);
     	//System.out.println("Informe um valor String");
     	//String valor = scan.next();
