@@ -13,7 +13,26 @@ public class Escola {
     	do{
     		switch(opcao){
 	    		case 1:
-	    			
+	    			int opcao1 = menuAluno();
+	    			while(opcao1 != 99);
+	    				switch(opcao1){
+	    				case 1:
+	    					//cadAluno();
+	    					break;
+	    				case 2:
+	    					//buscaAluno();
+	    					break;
+	    				case 99:
+	    					System.out.println("Tchau");
+	    					System.exit(0);
+	    					break;
+	    					default:
+	    						System.out.println("============================");
+	    			    		System.out.println("Opção inválida");
+	    			    		break;	    						
+	    				}
+	    					opcao1 = menuAluno();
+	    			}
 	    			System.out.println("============================");
 	    			System.out.println("||      Menu do Aluno     ||");
 	    			//menuAluno();
@@ -21,7 +40,26 @@ public class Escola {
 	    			//listaAlunos.add(aluno);
 	    			break;
 	    		case 2:
-	    			
+	    			int opcao2 = menuProfessor();
+	    			while(opcao2 != 99);
+	    				switch(opcao2){
+	    				case 1:
+	    					//cadProfessor();
+	    					break;
+	    				case 2:
+	    					//buscaProfessor();
+	    					break;
+	    				case 99:
+	    					System.out.println("Tchau");
+	    					System.exit(0);
+	    					break;
+	    					default:
+	    						System.out.println("============================");
+	    						System.out.println("Opção inválida");
+	    						break;
+	    				}
+	    					opcao2 = menuProfessor();
+	    			}
 	    			System.out.println("============================");
 	    			System.out.println("||    Menu do Professor   ||");
 		    		//menuProfessor();
@@ -34,28 +72,21 @@ public class Escola {
 	    			break;
 		    	default:
 		    		System.out.println("============================");
-		    		System.out.println("OpÃ§Ã£o invÃ¡lida");
+		    		System.out.println("Opção inválida");
 		    		break;
 	    	}
     		opcao = menu();
     	}while(opcao != 99);
     }
-/*    	public static void menuAluno(){
+    	public static int menuAluno(){
     		System.out.println("============================");
     		System.out.println("1 - Cadastrar aluno");
     		System.out.println("2 - Buscar aluno");
     		System.out.println("99 - Voltar");
     		System.out.println("============================");
-    		
-    		if(op == 1){
-    			cadAluno();
-    		}opcao
-    		else if(op == 2){
-    			
-    		}
-    	}*/
+    	}
     	
-    	public static void menuProfessor(){
+    	public static int menuProfessor(){
     		System.out.println("============================");
     		System.out.println("1 - Cadastrar professor");
     		System.out.println("2 - Buscar professor");
@@ -63,7 +94,7 @@ public class Escola {
     		System.out.println("============================");
     	}
     	
-    	public static void cadAluno(){
+    	/*public static void cadAluno(){
     		Aluno aluno = new Aluno();
     		Escola.scan.nextLine();
     		Escola.scan.next();
@@ -77,15 +108,17 @@ public class Escola {
     		Escola.scan.next();
     		Escola.scan.nextInt();
     		professor.mostraDados();
-    	}
+    	}*/
     	
     	public static int menu(){
     		int opcao = 0;    		
     		System.out.println("============================");
+    		System.out.println("            MENU            ");
 			System.out.println("1 - Cadastro de alunos");
 			System.out.println("2 - Cadastro de professores");
 			System.out.println("99 - Sair");
 			System.out.println("============================");
+			System.out.println("Opção: ");
 			opcao = scan.nextInt();
 			scan.nextLine();
 			return opcao;
