@@ -18,13 +18,13 @@ public class Aluno extends Pessoa {
     
     public Aluno() {
     	super();
-    	System.out.println("Matrícula: ");
+    	System.out.println("MatrÃ­cula: ");
     	long matricula = Escola.scan.nextLong();
     	this.matricula = matricula;
     }
     
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("Matrícula: " + this.matricula);
+        System.out.println("MatrÃ­cula: " + this.matricula);
     }
 }

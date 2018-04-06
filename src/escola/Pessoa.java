@@ -29,7 +29,7 @@ public class Pessoa {
         	System.out.println("Nome: ");
         	String nome = Escola.scan.nextLine();
         	System.out.println("Email: ");
-        	String email = Escola.scan.next();
+        	String email = Escola.scan.nextLine();
         	this.nome = nome;
         	this.email = email;
         }
