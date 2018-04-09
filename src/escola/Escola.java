@@ -2,6 +2,7 @@ package escola;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Escola {
 	
 	public static ArrayList<Aluno> listaAlunos = new ArrayList<Aluno>();
@@ -26,9 +27,10 @@ public class Escola {
 	    					break;
 	    				default:
 	    					System.out.println("============================");
-	    			    	System.out.println("Op√ß√£o inv√°lida");
-	    			    	break;	    						
-	    				}
+	    			    	System.out.println("OpÁ„o inv·lida");
+	    			    	opcao_aluno = menuAluno();
+	    			    	break;	    			    	
+	    				}	    				
 	    			}while(opcao_aluno != 99);
 	    			break;
 	    		case 2:
@@ -42,24 +44,22 @@ public class Escola {
 	    					//buscaProfessor();
 	    					break;
 	    				case 99:
-	    					menu();
+	    					break;
 	    				default:
 	    					System.out.println("============================");
-	    					System.out.println("Op√ß√£o inv√°lida");
-	    					break;
-	    				}while(opcao_professor != 99);
+	    					System.out.println("OpÁ„o inv·lida");
 	    					opcao_professor = menuProfessor();
-	    			System.out.println("============================");
-	    			System.out.println("||    Menu do Professor   ||");
-		    		}while(opcao_professor != 99);
-		    		break;
+	    					break;
+	    				}
+	    			}while(opcao_professor != 99);
+	    			break;
 	    		case 99:
 	    			System.out.println("Tchau");
 		    		System.exit(0);
 	    			break;
 		    	default:
 		    		System.out.println("============================");
-		    		System.out.println("Op√ß√£o inv√°lida");
+		    		System.out.println("OpÁ„o inv·lida");
 		    		break;
 	    	}
     		opcao = menu();
@@ -86,7 +86,7 @@ public class Escola {
     		System.out.println("99 - Voltar");
     		System.out.println("============================");
     		opcao_professor = scan.nextInt();
-			scan.nextLine();
+    		scan.nextLine();
 			return opcao_professor;
     	}
     	
@@ -114,20 +114,9 @@ public class Escola {
 			System.out.println("2 - Cadastro de professores");
 			System.out.println("99 - Sair");
 			System.out.println("============================");
-			System.out.println("Op√ß√£o: ");
+			System.out.println("OpÁ„o: ");
 			opcao = scan.nextInt();
 			scan.nextLine();
 			return opcao;
 		}
-}    	
-    	//Scanner scan = new Scanner(System.in);
-    	//System.out.println("Informe um valor String");
-    	//String valor = scan.next();
-    	//System.out.println("Voc√™ informou:" +valor);
-    	//System.out.println("Informe a sua idade");
-    	//int idade = scan.nextInt();
-    	//System.out.println("Idade: " +idade);
-    	//System.out.println("Informe seu nome completo: ");
-    	//String nomeCompleto = scan.nextLine();
-    	//System.out.println("Nome completo: " +nomeCompleto);
-
+}

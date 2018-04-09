@@ -38,6 +38,4 @@ public class Pessoa {
             System.out.println("Nome: " + this.nome);
             System.out.println("Email: " + this.email); 
         }
-}    
-    
-    
+}
