@@ -3,6 +3,7 @@ package escola;
 public class Pessoa {
     private String nome = "";
     private String email = "";
+    //private int indice;
 
         public String getNome(){
             return nome;
@@ -25,7 +26,15 @@ public class Pessoa {
             this.email = email;
         }
         
-        public Pessoa() {
+        /*public int getIndice(){
+        	return indice;
+        }
+        
+        public void setIndice(int indice) {
+        	this.indice = indice;
+        }*/
+        
+        public Pessoa(){
         	System.out.println("Nome: ");
         	String nome = Escola.scan.nextLine();
         	System.out.println("Email: ");
@@ -33,6 +42,21 @@ public class Pessoa {
         	this.nome = nome;
         	this.email = email;
         }
+        
+        /*public void updatePessoa(){
+        	String nome = "";
+        	String email = "";
+        	System.out.println("Novo nome: ");
+        	nome = Escola.scan.nextLine();
+        	if(!nome.isEmpty()){
+        		this.nome = nome;
+        	}
+        	System.out.println("Novo email: ");
+        	email = Escola.scan.nextLine();
+        	if(!email.isEmpty()){
+        		this.email = email;
+        	}        	
+        }*/
 
         public void mostraDados(){
             System.out.println("Nome: " + this.nome);

@@ -18,13 +18,33 @@ public class Aluno extends Pessoa {
     
     public Aluno() {
     	super();
-    	System.out.println("MatrÌcula: ");
+    	System.out.println("Matr√≠cula: ");
     	long matricula = Escola.scan.nextLong();
     	this.matricula = matricula;
     }
     
+    /*public boolean save(){
+    	Escola.listaAlunos.add(this);
+    	return true;
+    }
+    
+    public void updateAluno(){
+    	super.updatePessoa();
+    	long matricula = 0;
+    	System.out.println("Nova matr√≠cula: ");
+    	matricula = Escola.scan.nextLong();
+    	if(matricula != 0){
+    		this.matricula = matricula;
+    	}    	
+    }
+    
+    public boolean update(){
+    	Escola.listaAlunos.set(this.getIndice(), this);
+    	return true;
+    }*/
+    
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("MatrÌcula: " + this.matricula);
+        System.out.println("Matr√≠cula: " + this.matricula);
     }
 }
