@@ -18,20 +18,21 @@ public class Aluno extends Pessoa {
     
     public Aluno() {
     	super();
-    	System.out.println("MatrÃ­cula: ");
-    	long matricula = Escola.scan.nextLong();
+    	System.out.println("Matrícula: ");
+    	long matricula = (long)Escola.scan.nextLong();
+    	Escola.scan.nextLine();
     	this.matricula = matricula;
     }
     
-    /*public boolean save(){
+    public boolean save(){
     	Escola.listaAlunos.add(this);
     	return true;
     }
     
-    public void updateAluno(){
+    public void updatePessoa(){
     	super.updatePessoa();
     	long matricula = 0;
-    	System.out.println("Nova matrÃ­cula: ");
+    	System.out.println("Nova matrícula: ");
     	matricula = Escola.scan.nextLong();
     	if(matricula != 0){
     		this.matricula = matricula;
@@ -41,10 +42,10 @@ public class Aluno extends Pessoa {
     public boolean update(){
     	Escola.listaAlunos.set(this.getIndice(), this);
     	return true;
-    }*/
+    }
     
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("MatrÃ­cula: " + this.matricula);
+        System.out.println("Matrícula: " + this.matricula);
     }
 }
