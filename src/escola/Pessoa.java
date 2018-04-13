@@ -43,7 +43,7 @@ public class Pessoa {
         	this.email = email;
         }
         
-        public void updatePessoa(){
+       /* public void updatePessoa(){
         	String nome = "";
         	String email = "";
         	System.out.println("Novo nome: ");
@@ -56,7 +56,7 @@ public class Pessoa {
         	if(!email.isEmpty()){
         		this.email = email;
         	}        	
-        }
+        }*/
 
         public void mostraDados(){
             System.out.println("Nome: " + this.nome);

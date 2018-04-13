@@ -1,6 +1,9 @@
 package escola;
 
+import java.util.InputMismatchException;
+
 public class Aluno extends Pessoa {
+	
     private long matricula = 0;
    
     public long getMatricula(){
@@ -18,13 +21,17 @@ public class Aluno extends Pessoa {
     
     public Aluno() {
     	super();
-    	System.out.println("MatrÌcula: ");
-    	long matricula = (long)Escola.scan.nextLong();
-    	Escola.scan.nextLine();
-    	this.matricula = matricula;
+    	try{
+    		System.out.println("Matr√≠cula: ");
+        	this.matricula = Escola.scan.nextLong();
+    		Escola.scan.nextLine();
+    	} catch(InputMismatchException err){
+    		System.out.println("ERRO: O valor deve ser um n√∫mero!");
+			Escola.scan.nextLine(); 
+    	}
     }
     
-    public boolean save(){
+    /*public boolean save(){
     	Escola.listaAlunos.add(this);
     	return true;
     }
@@ -32,7 +39,7 @@ public class Aluno extends Pessoa {
     public void updatePessoa(){
     	super.updatePessoa();
     	long matricula = 0;
-    	System.out.println("Nova matrÌcula: ");
+    	System.out.println("Nova matr√≠cula: ");
     	matricula = Escola.scan.nextLong();
     	if(matricula != 0){
     		this.matricula = matricula;
@@ -42,10 +49,10 @@ public class Aluno extends Pessoa {
     public boolean update(){
     	Escola.listaAlunos.set(this.getIndice(), this);
     	return true;
-    }
+    }*/
     
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("MatrÌcula: " + this.matricula);
+        System.out.println("Matr√≠cula: " + this.matricula);
     }
 }
