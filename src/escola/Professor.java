@@ -34,22 +34,22 @@ public class Professor extends Pessoa {
     	String disciplina = Escola.scan.nextLine();
     	this.disciplina = disciplina;
     	try{
-    		System.out.println("Carga Hor√°ria: ");
+    		System.out.println("Carga Hor·ria: ");
         	this.cargaHoraria = Escola.scan.nextInt();
     		Escola.scan.nextLine();
     	} catch(InputMismatchException err){
-    		System.out.println("ERRO: O valor deve ser um n√∫mero!");
+    		System.out.println("ERRO: O valor deve ser um n˙mero!");
 			Escola.scan.nextLine(); 
     	}
     }
     
-   /* public boolean save(){
+    public boolean save(){
     	Escola.listaProfessores.add(this);
     	return true;
     }
     
-    public void updatePessoa(){
-    	super.updatePessoa();
+    public void updateProfessor(){
+    	super.updatePes();
     	String disciplina = "";
     	int cargaHoraria = 0;
     	System.out.println("Nova disciplina: ");
@@ -57,7 +57,7 @@ public class Professor extends Pessoa {
     	if(!disciplina.isEmpty()){
     		this.disciplina = disciplina;
     	}
-    	System.out.println("Nova carga hor√°ria: ");
+    	System.out.println("Nova carga hor·ria: ");
     	cargaHoraria = Escola.scan.nextInt();
     	Escola.scan.nextLine();
     	if(cargaHoraria != 0){
@@ -65,14 +65,13 @@ public class Professor extends Pessoa {
     	}
     }
     
-    public boolean update(){
+    public void update(){
     	Escola.listaProfessores.set(this.getIndice(), this);
-    	return true;
-    }*/
+    }
 
     public void mostraDados(){
         super.mostraDados();
         System.out.println("Disciplina: " + this.disciplina);
-        System.out.println("Carga Hor√°ria: " + this.cargaHoraria); 
+        System.out.println("Carga Hor·ria: " + this.cargaHoraria); 
     }
 }
