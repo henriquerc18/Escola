@@ -23,26 +23,25 @@ public class Escola {
 	    					break;
 	    				case 2:
 	    					Aluno al = buscaAluno();
-	    					if(al != null && al.getEmail() != ""){
-	    						System.out.println("========================");
-	    						System.out.println("   Aluno encontrado!    ");
-	    						System.out.println("========================");
-	    						al.updatePes();
+	    					if(al != null){
 	    						al.updateAluno();
+	    						al.updatePes();
 	    					}else{
-	    						System.out.println("=============================");
-	    						System.out.println(" ERRO: Aluno n„o encontrado! ");
-	    						System.out.println("=============================");
+	    						System.out.println("=================================");
+	    						System.out.println("ERRO: Aluno n√£o encontrado!");
+	    						System.out.println("=================================");
 	    					}
 	    					break;
+	    				case 3:
+	    					listaAlunos();
 	    				case 99:
 	    					break;
 	    				default:
-	    					System.out.println("============================");
-	    			    	System.out.println("OpÁ„o inv·lida");
-	    			    	opcao_aluno = menuAluno();
+	    					System.out.println("=================================");
+	    			    	System.out.println("Op√ß√£o inv√°lida");
 	    			    	break;	    			    	
 	    				}
+	    				opcao_aluno = menuAluno();
 	    			}while(opcao_aluno != 99);
 	    			break;
 	    		case 2:
@@ -55,25 +54,24 @@ public class Escola {
 	    				case 2:
 	    					Professor prof = buscaProfessor();
 	    					if(prof != null){
-	    						System.out.println("========================");
-	    						System.out.println("   Professor encontrado!    ");
-	    						System.out.println("========================");
-	    						prof.updatePes();
 	    						prof.updateProfessor();
+	    						prof.updatePes();
 	    					}else{
-	    						System.out.println("=============================");
-	    						System.out.println(" ERRO: Professor n„o encontrado! ");
-	    						System.out.println("=============================");
+	    						System.out.println("=================================");
+	    						System.out.println("ERRO: Professor n√£o encontrado!");
+	    						System.out.println("=================================");
 	    					}
 	    					break;
+	    				case 3:
+	    					listaProfessores();
 	    				case 99:
 	    					break;
 	    				default:
-	    					System.out.println("============================");
-	    					System.out.println("OpÁ„o inv·lida");
-	    					opcao_professor = menuProfessor();
+	    					System.out.println("=================================");
+	    					System.out.println("Op√ß√£o inv√°lida");
 	    					break;
 	    				}
+	    				opcao_professor = menuProfessor();
 	    			}while(opcao_professor != 99);
 	    			break;
 	    		case 99:
@@ -81,8 +79,9 @@ public class Escola {
 		    		System.exit(0);
 	    			break;
 		    	default:
-		    		System.out.println("============================");
-		    		System.out.println("OpÁ„o inv·lida");
+		    		System.out.println("=================================");
+		    		System.out.println("Op√ß√£o inv√°lida");
+		    		System.exit(0);
 		    		break;
 	    	}
     		opcao = menu();
@@ -92,20 +91,21 @@ public class Escola {
     	//Menu Principal
 		public static int menu(){
 			int opcao = 0;
-			try{  //Menu principal construÌdo para que o usu·rio digite um n˙mero.
-				System.out.println("============================");
+			try{  //Menu principal constru√≠do para que o usu√°rio digite um n√∫mero.
+				System.out.println("=================================");
 				System.out.println("            MENU            ");
 				System.out.println("1 - Cadastro de alunos");
 				System.out.println("2 - Cadastro de professores");
 				System.out.println("99 - Sair");
-				System.out.println("============================");
-				System.out.println("OpÁ„o: ");
-				opcao = scan.nextInt();            //Leitura da opÁ„o.
-				scan.nextLine();                   //Para n„o imprimir na tela 2 linhas seguidas ignorando o que o usu·rio digitar na primeira.
-			} catch(InputMismatchException err){   //Caso o usu·rio digite letras.
-				System.out.println("ERRO: O valor deve ser um n˙mero!");
-				scan.nextLine();                   //Para n„o cair em loop infinito caso o usu·rio digite letras.
-				opcao = menu();//Para n„o cair em default imprimindo "OpÁ„o inv·lida", pois j· foi impressa a mensagem de erro. Assim, imprime o menu principal novamente.
+				System.out.println("=================================");
+				System.out.println("Op√ß√£o: ");
+				opcao = scan.nextInt();            //Leitura da op√ß√£o.
+				scan.nextLine();                   //Para n√£o imprimir na tela 2 linhas seguidas ignorando o que o usu√°rio digitar na primeira.
+			} catch(InputMismatchException err){   //Caso o usu√°rio digite letras.
+				System.out.println("=================================");
+				System.out.println("ERRO: O valor deve ser um n√∫mero!");
+				scan.nextLine();                   //Para n√£o cair em loop infinito caso o usu√°rio digite letras.
+				opcao = menu();//Para n√£o cair em default imprimindo "Op√ß√£o inv√°lida", pois j√° foi impressa a mensagem de erro. Assim, imprime o menu principal novamente.
 			}
 			return opcao;
 		}
@@ -113,19 +113,21 @@ public class Escola {
     	//Menu do Aluno
     	public static int menuAluno(){
     		int opcao_aluno = 0;
-    		try{  //Menu do aluno construÌdo para que o usu·rio digite um n˙mero.
-    			System.out.println("============================");
+    		try{  //Menu do aluno constru√≠do para que o usu√°rio digite um n√∫mero.
+    			System.out.println("=================================");
     			System.out.println("1 - Cadastrar aluno");
     			System.out.println("2 - Buscar aluno");
+    			System.out.println("3 - Lista de alunos");
     			System.out.println("99 - Voltar");
-    			System.out.println("============================");
-    			System.out.println("OpÁ„o: ");
-    			opcao_aluno = scan.nextInt();  //Leitura da opÁ„o do aluno.
-    			scan.nextLine();               //Para n„o imprimir na tela 2 linhas seguidas ignorando o que o usu·rio digitar na primeira.
-    		} catch(InputMismatchException err ){ //Caso o usu·rio digite letras.
-    			System.out.println("ERRO: O valor deve ser um n˙mero!");
-    			scan.nextLine();               //Para n„o cair em loop infinito caso o usu·rio digite letras.
-    			opcao_aluno = menuAluno();//Para n„o cair em default imprimindo "OpÁ„o inv·lida", pois j· foi impressa a mensagem de erro. Assim, imprime o menu do aluno novamente.
+    			System.out.println("=================================");
+    			System.out.println("Op√ß√£o: ");
+    			opcao_aluno = scan.nextInt();  //Leitura da op√ß√£o do aluno.
+    			scan.nextLine();               //Para n√£o imprimir na tela 2 linhas seguidas ignorando o que o usu√°rio digitar na primeira.
+    		} catch(InputMismatchException err ){ //Caso o usu√°rio digite letras.
+    			System.out.println("=================================");
+    			System.out.println("ERRO: O valor deve ser um n√∫mero!");
+    			scan.nextLine();               //Para n√£o cair em loop infinito caso o usu√°rio digite letras.
+    			opcao_aluno = menuAluno();//Para n√£o cair em default imprimindo "Op√ß√£o inv√°lida", pois j√° foi impressa a mensagem de erro. Assim, imprime o menu do aluno novamente.
     		}
     		return opcao_aluno;
     	}
@@ -133,19 +135,21 @@ public class Escola {
     	//Menu do Professor
     	public static int menuProfessor(){
     		int opcao_professor = 0;
-    		try{  //Menu do professor construÌdo para que o usu·rio digite um n˙mero.
-	    		System.out.println("============================");
+    		try{  //Menu do professor constru√≠do para que o usu√°rio digite um n√∫mero.
+	    		System.out.println("=================================");
 	    		System.out.println("1 - Cadastrar professor");
 	    		System.out.println("2 - Buscar professor");
+	    		System.out.println("3 - Lista de professores");
 	    		System.out.println("99 - Voltar");
-	    		System.out.println("============================");
-	    		System.out.println("OpÁ„o: ");
-	    		opcao_professor = scan.nextInt();  //Leitura da opÁ„o do professor.
-	    		scan.nextLine();                   //Para n„o imprimir na tela 2 linhas seguidas ignorando o que o usu·rio digitar na primeira.
-    		} catch(InputMismatchException err){   //Caso o usu·rio digite letras.
-    			System.out.println("ERRO: O valor deve ser um n˙mero!");
-    			scan.nextLine();                   //Para n„o cair em loop infinito caso o usu·rio digite letras.
-    			opcao_professor = menuProfessor(); //Para n„o cair em default imprimindo "OpÁ„o inv·lida", pois j· foi impressa a mensagem de erro. Assim, imprime o menu do professor novamente.
+	    		System.out.println("=================================");
+	    		System.out.println("Op√ß√£o: ");
+	    		opcao_professor = scan.nextInt();  //Leitura da op√ß√£o do professor.
+	    		scan.nextLine();                   //Para n√£o imprimir na tela 2 linhas seguidas ignorando o que o usu√°rio digitar na primeira.
+    		} catch(InputMismatchException err){   //Caso o usu√°rio digite letras.
+    			System.out.println("=================================");
+    			System.out.println("ERRO: O valor deve ser um n√∫mero!");
+    			scan.nextLine();                   //Para n√£o cair em loop infinito caso o usu√°rio digite letras.
+    			opcao_professor = menuProfessor(); //Para n√£o cair em default imprimindo "Op√ß√£o inv√°lida", pois j√° foi impressa a mensagem de erro. Assim, imprime o menu do professor novamente.
     		}
 			return opcao_professor;
     	}
@@ -153,59 +157,94 @@ public class Escola {
     	//Cadastro do Aluno
     	public static void cadAluno(){
     		Aluno aluno = new Aluno();                       //Instanciando a classe Aluno.
-    		if(aluno != null && aluno.getMatricula() != 0){  //Se o usu·rio digitar algo (se os campos n„o estiverem nulos).
+    		if(aluno != null && aluno.getMatricula() != 0){  //Se o usu√°rio digitar algo (se os campos n√£o estiverem nulos).
     			aluno.save();                              //Salvar.
-    			listaAlunos.add(aluno);
-	    		System.out.println("============================");
-	    		System.out.println(" xito na criaÁ„o do aluno!");
-	    		System.out.println("============================");
+	    		System.out.println("=================================");
+	    		System.out.println("√äxito na cria√ß√£o do aluno!");
+	    		System.out.println("=================================");
 	    		aluno.mostraDados();   //Mostrar na tela o que foi digitado.
     		}else{
-    			System.out.println("============================");
-	    		System.out.println("Falha na criaÁ„o do aluno!");
-	    		System.out.println("============================");
+    			System.out.println("=================================");
+	    		System.out.println("Falha na cria√ß√£o do aluno!");
+	    		System.out.println("=================================");
     		}
     	}
     	
     	//Cadastro do Professor
     	public static void cadProfessor(){
     		Professor professor = new Professor();                      //Instanciando a classe Professor.
-    		if(professor != null && professor.getCargaHoraria() != 0){ 	//Se o usu·rio digitar algo (se os campos n„o estiverem nulos).
-    			professor.save();                                     //Salvar. 
+    		if(professor != null && professor.getCargaHoraria() != 0){ 	//Se o usu√°rio digitar algo (se os campos n√£o estiverem nulos).
+    			professor.save();                                       //Salvar. 
     			System.out.println("================================");
-	    		System.out.println(" xito na criaÁ„o do professor!");
+	    		System.out.println("√äxito na cria√ß√£o do professor!");
 	    		System.out.println("================================");
     			professor.mostraDados();                                //Mostrar na tela o que foi digitado.
     		}else{
     			System.out.println("================================");
-	    		System.out.println("Falha na criaÁ„o do professor!");
+	    		System.out.println(" Falha na cria√ß√£o do professor! ");
 	    		System.out.println("================================");
     		}
     	}
     	
+    	//Busca do Aluno
     	public static Aluno buscaAluno(){
     		String pesquisa = "";
     		System.out.println("Email do aluno: ");
-        	pesquisa = Escola.scan.nextLine();
+        	pesquisa = scan.nextLine();                             //"pesquisa" recebe o email que o usu√°rio digitou.
+        	System.out.println("================================");
+			System.out.println("Aluno encontrado!");
+			System.out.println("================================");
         	for (Aluno al : listaAlunos) {
-        		if (pesquisa.equals(al.getEmail())) {
-        			al.setIndice(listaAlunos.indexOf(al));
+        		if (pesquisa.equals(al.getEmail())) {               //Se o email digitado na busca for igual ao cadastrado anteriormente...
+        			al.setIndice(listaAlunos.indexOf(al));          //Adiciona na posi√ß√£o da listaProfessores.
         			return al;
         		}
         	}   	
         	return null;
     	}
     	
+    	//Busca do Professor
     	public static Professor buscaProfessor(){
     		String pesquisa = "";
     		System.out.println("Email do professor: ");
-        	pesquisa = scan.nextLine();
-        	for (Professor prof : listaProfessores) {
-        		if (prof.getEmail() == pesquisa) {
-        			prof.setIndice(listaProfessores.indexOf(prof));
+        	pesquisa = scan.nextLine();                             //"pesquisa" recebe o email que o usu√°rio digitou.
+        	System.out.println("================================");
+			System.out.println("Professor encontrado!");
+			System.out.println("================================");
+        	for (Professor prof : listaProfessores) {               
+        		if (pesquisa.equals(prof.getEmail())) {             //Se o email digitado na busca for igual ao cadastrado anteriormente...
+        			prof.setIndice(listaProfessores.indexOf(prof)); //Adiciona na posi√ß√£o da listaProfessores.
         			return prof;
         		}
         	}
         	return null;
         }
+    	
+    	//Lista de Alunos
+    	public static void listaAlunos(){
+    		System.out.println("Dados dos Alunos:");
+    		System.out.println("================================");
+    		int pos = 0;
+    		for (Aluno aluno : listaAlunos){
+    			pos += 1;
+    			System.out.println("N√∫mero: "+ pos);
+    			aluno.mostraDados();
+    			System.out.println("================================");
+    		
+    		}
+    	}
+    	
+    	//Lista de Professores
+    	public static void listaProfessores(){
+    		System.out.println("Dados dos Profesores:");
+    		System.out.println("================================");
+    		int pos = 0;
+    		for (Professor professor : listaProfessores){
+    			pos += 1;
+    			System.out.println("N√∫mero: "+ pos);
+    			professor.mostraDados();
+    			System.out.println("================================");
+    		
+    		}
+    	}
 }

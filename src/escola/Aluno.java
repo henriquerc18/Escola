@@ -22,11 +22,11 @@ public class Aluno extends Pessoa {
     public Aluno() {
     	super();
     	try{
-    		System.out.println("Matrícula: ");
+    		System.out.println("MatrÃ­cula: ");
         	this.matricula = Escola.scan.nextLong();
     		Escola.scan.nextLine();
     	} catch(InputMismatchException err){
-    		System.out.println("ERRO: O valor deve ser um número!");
+    		System.out.println("ERRO: O valor deve ser um nÃºmero!");
 			Escola.scan.nextLine(); 
     	}
     }
@@ -39,19 +39,20 @@ public class Aluno extends Pessoa {
     public void updateAluno(){
     	super.updatePes();
     	long matricula = 0;
-    	System.out.println("Nova matrícula: ");
+    	System.out.println("Nova matrÃ­cula: ");
     	matricula = Escola.scan.nextLong();
     	if(matricula != 0){
     		this.matricula = matricula;
     	}    	
     }
     
-    public void update(){
+    public boolean update(){
     	Escola.listaAlunos.set(this.getIndice(), this);
+    	return true;
     }
     
     public void mostraDados(){
         super.mostraDados();
-        System.out.println("Matrícula: " + this.matricula);
+        System.out.println("MatrÃ­cula: " + this.matricula);
     }
 }
